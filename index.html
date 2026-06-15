@@ -173,7 +173,7 @@
         .pricing-grid { 
             display: flex; gap: 30px; justify-content: center; align-items: stretch; 
             margin-top: 20px; 
-            margin-bottom: 70px; /* GARANTE O ESPAÇO SEM INVASÃO */
+            margin-bottom: 70px;
         }
         .price-card { background: var(--glass-bg); padding: 45px 35px; border-radius: 20px; border: 1px solid var(--glass-border); text-align: left; position: relative; overflow: hidden; flex: 1; max-width: 400px; display: flex; flex-direction: column; }
         .price-card.featured { border: 2px solid var(--accent-green); background: rgba(193, 255, 114, 0.02); transform: scale(1.03); box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
@@ -215,13 +215,49 @@
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
+        /* =========================================
+           RESPONSIVIDADE (TABLETS E CELULARES)
+           ========================================= */
+        
+        /* Ajustes para Telas Médias (Tablets) */
         @media (max-width: 992px) {
             .hero { flex-direction: column; text-align: center; }
-            .hero-visual { display: none; }
+            .hero-visual { display: none; } /* Esconde o celular em telas menores */
             .management-grid, .solutions-grid, .pricing-grid { grid-template-columns: 1fr; }
-            .about-content { flex-direction: column; text-align: center; }
-            .logo img { height: 180px; margin: 0; }
-            .nav-links { display: none; }
+            .about-content { flex-direction: column; text-align: center; gap: 30px; padding: 30px; }
+            .nav-links { display: none; } /* Oculta menu longo */
+        }
+
+        /* Ajustes Específicos e Finos para Celulares */
+        @media (max-width: 768px) {
+            /* Ajuste do Header e Logo para não empurrar a tela */
+            header { padding: 15px 0; }
+            .nav-wrapper { flex-direction: row; justify-content: space-between; }
+            .logo img { height: 100px; margin: 0; } /* Logo muito menor no mobile */
+            .btn-top-app { padding: 8px 15px; font-size: 0.75rem; }
+
+            /* Ajuste da Dobra Principal (Hero) */
+            .hero-section { padding: 120px 0 50px 0; min-height: auto; }
+            .hero-text h1 { font-size: 2.2rem; }
+            .hero-text p { font-size: 1rem; margin-bottom: 25px; }
+
+            /* Botões Principais Empilhados em 100% da largura */
+            .hero-buttons { flex-direction: column; width: 100%; gap: 12px; }
+            .btn-neon-pink, .btn-neon-green { width: 100%; white-space: normal; font-size: 0.85rem; padding: 14px; text-align: center; }
+
+            /* Ajuste dos espaçamentos gerais */
+            section { padding: 60px 0; }
+            .section-title { margin-bottom: 35px; }
+            .section-title h2 { font-size: 1.8rem; }
+            
+            /* Ajuste dos Cards de Preço */
+            .price-card { padding: 30px 20px; max-width: 100%; }
+            .price-value { font-size: 2.5rem; }
+            
+            /* Ajuste da seção Quem Somos */
+            .about-content { padding: 25px; border-radius: 20px; }
+            .about-text h2 { font-size: 2rem; }
+            .about-text p { font-size: 1rem; }
         }
     </style>
 </head>
