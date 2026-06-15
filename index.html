@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetricsOne | Destrave o Lucro do seu Negócio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-gradient-start: #1b5ed8;
+            --bg-gradient-end: #0d276b;
+            --cta-color: #FE547A;
+            --cta-hover: #e04465;
+            --text-light: #ffffff;
+            --text-muted: #a5bdf0;
+            --accent-green: #c1ff72;
+            --whatsapp: #25D366;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        
+        body { 
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+            color: var(--text-light); 
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; width: 100%; }
+
+        /* CABEÇALHO TRANSPARENTE COMPACTO */
+        header { 
+            padding: 10px 0; 
+            position: absolute; 
+            width: 100%;
+            top: 0; 
+            z-index: 1000;
+        }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        
+        /* LOGO GIGANTE EM POSIÇÃO COMPACTA */
+        .logo img {
+            height: 220px; 
+            width: auto;
+            object-fit: contain;
+            display: block;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+            margin: -60px 0;
+        }
+
+        .nav-links { display: flex; gap: 25px; list-style: none; align-items: center;}
+        .nav-links a { color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: 0.2s; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px;}
+        .nav-links a:hover { opacity: 1; color: var(--accent-green); }
+
+        .btn-top-app {
+            background: transparent; color: #fff; text-decoration: none;
+            padding: 10px 25px; border-radius: 30px; font-weight: 700; font-size: 0.85rem;
+            border: 2px solid var(--glass-border); transition: 0.3s; text-transform: uppercase;
+        }
+        .btn-top-app:hover { border-color: var(--accent-green); color: var(--accent-green); background: rgba(193,255,114,0.05); }
+
+        /* HERO SECTION */
+        .hero-section { padding: 140px 0 80px 0; min-height: 85vh; display: flex; align-items: center; }
+        .hero { display: flex; align-items: center; justify-content: space-between; gap: 50px; flex-wrap: nowrap; width: 100%; }
+        
+        .hero-text { flex: 1.2; max-width: 600px; }
+        .hero-text h1 { font-family: 'Montserrat', sans-serif; font-size: 3.5rem; font-weight: 800; line-height: 1.15; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .hero-text h1 span { color: var(--accent-green); }
+        .hero-text p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 40px; line-height: 1.6; }
+
+        /* HERO CTA BUTTONS */
+        .hero-buttons { display: flex; gap: 15px; align-items: center; flex-wrap: nowrap; }
+        
+        .btn-neon-pink {
+            background: var(--cta-color); color: #fff; text-decoration: none;
+            padding: 16px 32px; border-radius: 35px; font-weight: 700; font-size: 0.95rem;
+            transition: all 0.3s ease; border: 2px solid var(--cta-color);
+            box-shadow: 0 0 15px rgba(254, 84, 122, 0.4);
+            animation: pulse-pink 2s infinite; text-transform: uppercase;
+            letter-spacing: 0.5px; display: inline-flex; align-items: center; justify-content: center;
+            white-space: nowrap;
+        }
+        .btn-neon-pink:hover { background: var(--cta-hover); border-color: var(--cta-hover); transform: translateY(-2px); box-shadow: 0 0 25px rgba(254, 84, 122, 0.6); }
+
+        .btn-neon-green {
+            background: transparent; color: var(--whatsapp); text-decoration: none;
+            padding: 16px 32px; border-radius: 35px; font-weight: 700; font-size: 0.95rem;
+            transition: all 0.3s ease; border: 2px solid var(--whatsapp);
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.2);
+            animation: pulse-green 2s infinite; text-transform: uppercase;
+            letter-spacing: 0.5px; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            white-space: nowrap;
+        }
+        .btn-neon-green:hover { background: var(--whatsapp); color: #fff; transform: translateY(-2px); box-shadow: 0 0 25px rgba(37, 211, 102, 0.6); }
+
+        @keyframes pulse-pink { 0% { box-shadow: 0 0 0 0 rgba(254, 84, 122, 0.6); } 70% { box-shadow: 0 0 0 12px rgba(254, 84, 122, 0); } 100% { box-shadow: 0 0 0 0 rgba(254, 84, 122, 0); } }
+        @keyframes pulse-green { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); } 70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+
+        /* HERO VISUAL SMARTPHONE MOCKUP */
+        .hero-visual { flex: 0.8; position: relative; display: flex; justify-content: flex-end; align-items: center; padding-right: 40px; }
+        
+        .mockup-wrapper { position: relative; display: inline-block; }
+
+        .phone-mockup {
+            width: 300px; height: 600px; background: #1e293b; border-radius: 44px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5), inset 0 0 0 11px #0f172a;
+            position: relative; z-index: 5;
+            display: flex; flex-direction: column; overflow: hidden;
+        }
+        
+        .phone-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 120px; height: 25px; background: #0f172a; border-radius: 0 0 15px 15px; z-index: 10;}
+        
+        .phone-screen { 
+            background: #f8fafc; width: 100%; height: 100%; border-radius: 33px; 
+            overflow: hidden; position: relative; padding: 20px;
+            display: flex; flex-direction: column; gap: 15px;
+        }
+
+        /* SMARTPHONE CONTENT (CSS SMART DASHBOARD) */
+        .dash-card { background: #fff; border-radius: 12px; padding: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .dash-header { height: 10px; width: 40%; background: #e2e8f0; border-radius: 5px; margin-bottom: 10px; }
+        .dash-value { font-size: 1.2rem; font-weight: 800; color: #1e293b; margin-bottom: 5px; }
+        .dash-chart { height: 60px; background: linear-gradient(90deg, var(--accent-green) 30%, #e2e8f0 30%); border-radius: 4px; display: flex; align-items: flex-end; gap: 4px; padding: 5px; }
+        .dash-bar { flex: 1; background: #3b82f6; border-radius: 2px; }
+        .dash-circle { width: 100px; height: 100px; border: 8px solid #e2e8f0; border-top-color: var(--accent-green); border-radius: 50%; margin: 10px auto; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #1e293b; font-size: 1.1rem; }
+
+        /* CARROSEL DE CARDS ALINHADOS PARALELAMENTE */
+        .float-card {
+            position: absolute; background: rgba(13, 39, 107, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; padding: 15px; width: 175px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5); z-index: 10; opacity: 0; pointer-events: none;
+        }
+        .float-card i { color: var(--accent-green); font-size: 1.4rem; margin-bottom: 5px; }
+        .float-card h4 { font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 2px;}
+        .float-card p { font-size: 1.1rem; font-weight: 800; color: var(--accent-green); }
+
+        .f-left { left: -60px; top: 120px; } 
+        .f-right { right: -60px; bottom: 120px; } 
+
+        @keyframes cycleCards { 0%, 28% { opacity: 1; transform: translateY(0); } 33%, 100% { opacity: 0; transform: translateY(15px); } }
+        .g-a { animation: cycleCards 12s infinite; }
+        .g-b { animation: cycleCards 12s infinite 4s; }
+        .g-c { animation: cycleCards 12s infinite 8s; }
+
+        /* SEÇÕES UNIFORMES */
+        section { padding: 90px 0; border-top: 1px solid var(--glass-border); }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-family: 'Montserrat', sans-serif; font-size: 2.3rem; margin-bottom: 12px; font-weight: 800; }
+        .section-title p { color: var(--text-muted); font-size: 1.05rem; }
+
+        /* SEÇÃO DE GESTÃO */
+        .management-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+        .mgt-box { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: 35px 25px; transition: all 0.3s; }
+        .mgt-box:hover { border-color: var(--accent-green); background: rgba(255,255,255,0.05); transform: translateY(-3px); }
+        .mgt-box .icon-circle { width: 55px; height: 55px; background: rgba(193, 255, 114, 0.1); border-radius: 50%; color: var(--accent-green); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px; }
+        .mgt-box h3 { font-family: 'Montserrat', sans-serif; font-size: 1.25rem; margin-bottom: 12px; font-weight: 700; }
+        .mgt-box p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+
+        /* SOLUÇÕES */
+        .solutions-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .sol-card { background: var(--glass-bg); padding: 30px 25px; border-radius: 16px; border: 1px solid var(--glass-border); transition: 0.3s; }
+        .sol-card:hover { border-color: var(--accent-green); transform: translateY(-4px); }
+        .sol-card i { font-size: 2rem; color: var(--accent-green); margin-bottom: 15px; }
+        .sol-card h3 { font-size: 1.15rem; margin-bottom: 10px; font-family: 'Montserrat', sans-serif; }
+        .sol-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; }
+
+        /* GRADE DE PREÇOS COM AJUSTE DE ALTURA E MARGEM INFERIOR DE PROTEÇÃO */
+        .pricing-grid { 
+            display: flex; gap: 30px; justify-content: center; align-items: stretch; 
+            margin-top: 20px; 
+            margin-bottom: 70px; /* GARANTE O ESPAÇO SEM INVASÃO */
+        }
+        .price-card { background: var(--glass-bg); padding: 45px 35px; border-radius: 20px; border: 1px solid var(--glass-border); text-align: left; position: relative; overflow: hidden; flex: 1; max-width: 400px; display: flex; flex-direction: column; }
+        .price-card.featured { border: 2px solid var(--accent-green); background: rgba(193, 255, 114, 0.02); transform: scale(1.03); box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .featured-tag { background: var(--accent-green); color: #0d276b; padding: 4px 25px; position: absolute; top: 15px; right: -25px; transform: rotate(45deg); font-size: 0.65rem; font-weight: 800; letter-spacing: 0.5px; }
+        
+        .price-card h3 { font-family: 'Montserrat', sans-serif; font-size: 1.6rem; margin-bottom: 8px; text-align: center;}
+        .price-card > p { text-align: center; }
+        .price-value { font-family: 'Montserrat', sans-serif; font-size: 3rem; font-weight: 800; margin-bottom: 25px; color: #fff; text-align: center;}
+        .price-value span { font-size: 1rem; opacity: 0.6; }
+        
+        .price-list { list-style: none; margin-bottom: 35px; flex: 1; }
+        .price-list li { margin-bottom: 15px; font-size: 0.95rem; display: flex; align-items: center; gap: 12px; color: var(--text-light); }
+        .price-list li i { color: var(--accent-green); width: 16px; text-align: center;}
+        .price-list li.disabled { color: var(--text-muted); opacity: 0.6; }
+        .price-list li.disabled i { color: #ef4444; }
+
+        .btn-plan { width: 100%; padding: 15px; border-radius: 30px; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: 0.3s; background: var(--cta-color); color: #fff; border: 2px solid var(--cta-color); }
+        .btn-plan:hover { background: var(--cta-hover); border-color: var(--cta-hover); transform: translateY(-2px); }
+
+        /* SEÇÃO QUEM SOMOS ISOLADA E PROTEGIDA CONTRA SOBREPOSIÇÃO */
+        .about-section { clear: both; position: relative; display: block; width: 100%; }
+        .about-content { display: flex; align-items: center; gap: 50px; background: var(--glass-bg); padding: 50px; border-radius: 30px; border: 1px solid var(--glass-border); margin-top: 20px; }
+        .about-text { flex: 1; }
+        .about-text h2 { font-family: 'Montserrat', sans-serif; font-size: 2.5rem; margin-bottom: 20px; color: var(--accent-green); }
+        .about-text p { font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 20px; }
+
+        /* BOTÃO DO WHATSAPP PULSANTE EM VERDE OFICIAL COM NEON */
+        .whatsapp-float {
+            position: fixed; bottom: 30px; right: 30px; background: var(--whatsapp); color: #fff;
+            width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; box-shadow: 0 0 15px rgba(37, 211, 102, 0.5); z-index: 1000; transition: 0.3s;
+            animation: pulse-whatsapp 2s infinite; text-decoration: none;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        @keyframes pulse-whatsapp {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        @media (max-width: 992px) {
+            .hero { flex-direction: column; text-align: center; }
+            .hero-visual { display: none; }
+            .management-grid, .solutions-grid, .pricing-grid { grid-template-columns: 1fr; }
+            .about-content { flex-direction: column; text-align: center; }
+            .logo img { height: 180px; margin: 0; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <img src="icone-512 (5).png" alt="MetricsOne">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">O que fazemos</a></li>
+                <li><a href="#solutions">Soluções</a></li>
+                <li><a href="#pricing">Planos</a></li>
+                <li><a href="#who">Quem Somos</a></li>
+            </ul>
+            <a href="https://app.metricsone.com.br" class="btn-top-app">ACESSAR SISTEMA</a>
+        </div>
+    </header>
+
+    <div class="hero-section">
+        <main class="container hero">
+            <div class="hero-text">
+                <h1>Destrave o Potencial de Lucro do seu <span style="color: var(--accent-green);">Negócio</span>.</h1>
+                <p>Abandone as planilhas e o descontrole financeiro. O MetricsOne é a ferramenta definitiva para organizar custos, despesas e fazer seu negócio Crescer.</p>
+                <div class="hero-buttons">
+                    <a href="https://app.metricsone.com.br" class="btn-neon-pink">TESTAR 10 DIAS GRÁTIS</a>
+                    <a href="https://wa.me/5511913207227?text=Olá,%20estou%20no%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20MetricsOne!" target="_blank" class="btn-neon-green">
+                        <i class="fab fa-whatsapp"></i> Falar com Consultor
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="mockup-wrapper">
+                    <div class="phone-mockup">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <div class="dash-card"><div class="dash-header"></div><div class="dash-value">R$ 13.970,00</div><p style="font-size:0.6rem; color:#64748b">Faturamento Mensal</p></div>
+                            <div class="dash-circle">18.6%<br><span style="font-size:0.5rem">MARGEM</span></div>
+                            <div class="dash-card"><div class="dash-header" style="width:30%"></div><div class="dash-chart"><div class="dash-bar" style="height:40%"></div><div class="dash-bar" style="height:70%"></div><div class="dash-bar" style="height:55%"></div><div class="dash-bar" style="height:90%"></div><div class="dash-bar" style="height:40%"></div></div></div>
+                        </div>
+                    </div>
+
+                    <div class="float-card f-left g-a"><i class="fas fa-motorcycle"></i><h4>Motoboys</h4><p>Acerto Rápido</p></div>
+                    <div class="float-card f-right g-a"><i class="fas fa-arrow-trend-up"></i><h4>Margem Líquida</h4><p>+ 18.5%</p></div>
+                    <div class="float-card f-left g-b"><i class="fas fa-calculator"></i><h4>Precificação</h4><p>Simulador</p></div>
+                    <div class="float-card f-right g-b"><i class="fas fa-file-invoice-dollar"></i><h4>Despesas Op.</h4><p>Controle Total</p></div>
+                    <div class="float-card f-left g-c"><i class="fas fa-table"></i><h4>D.R.E.</h4><p>Automática</p></div>
+                    <div class="float-card f-right g-c"><i class="fas fa-box"></i><h4>Inventário</h4><p>Auditoria</p></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <section id="about" class="container">
+        <div class="section-title">
+            <h2>Gestão Descomplicada, Decisões Certeiras</h2>
+            <p>Construído para substituir a desorganização por dados estratégicos.</p>
+        </div>
+        <div class="management-grid">
+            <div class="mgt-box"><div class="icon-circle"><i class="fas fa-shield-alt"></i></div><h3>Segurança de Dados</h3><p>Suas informações financeiras protegidas na nuvem com criptografia de ponta.</p></div>
+            <div class="mgt-box"><div class="icon-circle"><i class="fas fa-gauge-high"></i></div><h3>Visão de Alto Nível</h3><p>Monitore canais rentáveis e ticket médio sem precisar somar cupons.</p></div>
+            <div class="mgt-box"><div class="icon-circle"><i class="fas fa-chart-line"></i></div><h3>Foco em Lucratividade</h3><p>Encontre os ralos por onde o seu dinheiro está sumindo e tome o controle.</p></div>
+        </div>
+    </section>
+
+    <section id="solutions">
+        <div class="container">
+            <div class="section-title"><h2>Soluções Desenvolvidas para Resultados</h2><p>Módulos integrados de ponta a ponta.</p></div>
+            <div class="solutions-grid">
+                <div class="sol-card"><i class="fas fa-dollar-sign"></i><h3>Vendas Multicanais</h3><p>Registre suas vendas do iFood, 99foods, keeta, WhatsApp e Balcão de forma centralizada.</p></div>
+                <div class="sol-card"><i class="fas fa-file-invoice-dollar"></i><h3>Despesas Op.</h3><p>Lance despesas pessoais e estruturais, boletos de forn. despesas fixas e variaveis.</p></div>
+                <div class="sol-card"><i class="fas fa-receipt"></i><h3>Ficha Técnica</h3><p>Conheça o custo real de cada prato eliminando o "achismo".</p></div>
+                <div class="sol-card"><i class="fas fa-chart-pie"></i><h3>Relatórios de BI</h3><p>Gráficos limpos criados para você ler, analisar tendências e tomar decisões em segundos.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="container">
+        <div class="section-title"><h2>Escolha o Plano Ideal</h2><p>Teste agora e mude de nível quando estiver pronto.</p></div>
+        
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>Starter</h3>
+                <p style="color:var(--text-muted); margin-bottom:15px; font-size:0.9rem;">Organização e fluxo diário</p>
+                <div class="price-value">R$ 37,90<span>/mês</span></div>
+                <ul class="price-list">
+                    <li><i class="fas fa-check"></i> Lançamento de Vendas</li>
+                    <li><i class="fas fa-check"></i> Cadastro de Produtos e Estoque</li>
+                    <li><i class="fas fa-check"></i> Cadastro de Embalagens e Fornecedores</li>
+                    <li><i class="fas fa-check"></i> Despesas Operacionais</li>
+                    <li class="disabled"><i class="fas fa-times"></i> D.R.E. Gerencial</li>
+                    <li class="disabled"><i class="fas fa-times"></i> Ficha Técnica Avançada</li>
+                    <li class="disabled"><i class="fas fa-times"></i> Pagamento de Motoboy</li>
+                    <li><i class="fas fa-times"></i> Inventário e Auditoria</li>
+                </ul>
+                <a href="https://app.metricsone.com.br" class="btn-plan"><i class="fas fa-rocket"></i> TESTAR 10 DIAS GRÁTIS</a>
+            </div>
+
+            <div class="price-card featured">
+                <div class="featured-tag">RECOMENDADO</div>
+                <h3>Profissional</h3>
+                <p style="color:var(--text-muted); margin-bottom:15px; font-size:0.9rem;">Inteligência e BI Completo</p>
+                <div class="price-value">R$ 57,90<span>/mês</span></div>
+                <ul class="price-list">
+                    <li><i class="fas fa-check"></i> <b>Tudo do Plano Starter</b></li>
+                    <li><i class="fas fa-check"></i> <b>D.R.E. Gerencial Automática</b></li>
+                    <li><i class="fas fa-check"></i> <b>Ficha Técnica e Engenharia</b></li>
+                    <li><i class="fas fa-check"></i> <b>Pagamento de Motoboys + PDFs</b></li>
+                    <li><i class="fas fa-check"></i> Inventário e Auditoria</li>
+                    <li><i class="fas fa-check"></i> Simulador de Precificação Perfeita</li>
+                </ul>
+                <a href="https://app.metricsone.com.br" class="btn-plan"><i class="fas fa-rocket"></i> TESTAR 10 DIAS GRÁTIS</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="who" class="container about-section">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Quem Somos</h2>
+                <p>O MetricsOne nasceu da necessidade real de transformar a gestão de pequenos e médios estabelecimentos do setor de Food Service. Sabemos que a rotina de um negócio é intensa e, muitas vezes, o controle financeiro acaba ficando em segundo plano.</p>
+                <p>Muitos restaurantes, hamburguerias, pizzarias e deliveries vendem todos os dias, mas fecham o mês sem saber exatamente quanto lucraram ou para onde o dinheiro foi. Se você vive essa realidade, chegou a hora de mudar.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 40px 0; border-top: 1px solid var(--glass-border); text-align: center; opacity: 0.5; font-size: 0.85rem;">
+        <p>&copy; 2026 MetricsOne. Todos os direitos reservados.</p>
+    </footer>
+
+    <a href="https://wa.me/5511913207227?text=Olá,%20estou%20no%20site%20e%20preciso%20de%20ajuda!" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
