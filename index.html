@@ -100,19 +100,18 @@
         .mockup-wrapper { 
             position: relative; 
             display: inline-block; 
-            perspective: 1200px; /* Cria o efeito 3D */
+            perspective: 1200px; 
         }
 
         .phone-mockup {
             width: 300px; height: 600px; background: #1e293b; border-radius: 44px;
-            box-shadow: -25px 25px 40px rgba(0,0,0,0.4), inset 0 0 0 11px #0f172a; /* Sombra projetada */
+            box-shadow: -25px 25px 40px rgba(0,0,0,0.4), inset 0 0 0 11px #0f172a; 
             position: relative; z-index: 5;
             display: flex; flex-direction: column; overflow: hidden;
-            transform: rotateY(-20deg) rotateX(8deg) rotateZ(-3deg); /* Inclinação de tela igual à referência */
+            transform: rotateY(-20deg) rotateX(8deg) rotateZ(-3deg); 
             transition: transform 0.5s ease;
         }
 
-        /* Animação suave ao passar o mouse por cima do celular */
         .phone-mockup:hover { transform: rotateY(-15deg) rotateX(5deg) rotateZ(-1deg); }
         
         .phone-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 120px; height: 25px; background: #0f172a; border-radius: 0 0 15px 15px; z-index: 10;}
@@ -134,7 +133,7 @@
         /* CARROSEL DE CARDS (COR AZUL CLARO E EFEITO DE FLUTUAÇÃO CONTINUA) */
         .float-card {
             position: absolute; 
-            background: rgba(59, 130, 246, 0.4); /* Fundo Azul Claro */
+            background: rgba(59, 130, 246, 0.4); 
             backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 12px; padding: 15px; width: 175px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.3); z-index: 10; opacity: 0; pointer-events: none;
@@ -146,13 +145,12 @@
         .f-left { left: -80px; top: 120px; } 
         .f-right { right: -50px; bottom: 120px; } 
 
-        /* ANIMAÇÃO FLUTUANTE QUE SOBE E DESCE ENQUANTO ESTÁ ATIVA */
         @keyframes cycleCards { 
             0%   { opacity: 0; transform: translateY(30px) scale(0.95); }
             4%   { opacity: 1; transform: translateY(0) scale(1); }
-            16%  { opacity: 1; transform: translateY(-15px) scale(1); } /* Flutua para cima */
-            28%  { opacity: 1; transform: translateY(-5px) scale(1); }  /* Começa a descer */
-            33%  { opacity: 0; transform: translateY(-30px) scale(0.95); } /* Sai da tela */
+            16%  { opacity: 1; transform: translateY(-15px) scale(1); } 
+            28%  { opacity: 1; transform: translateY(-5px) scale(1); }  
+            33%  { opacity: 0; transform: translateY(-30px) scale(0.95); } 
             100% { opacity: 0; transform: translateY(-30px) scale(0.95); }
         }
         .g-a { animation: cycleCards 12s infinite; }
@@ -181,7 +179,7 @@
         .sol-card h3 { font-size: 1.15rem; margin-bottom: 10px; font-family: 'Montserrat', sans-serif; }
         .sol-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; }
 
-        /* GRADE DE PREÇOS COM AJUSTE DE ALTURA E MARGEM INFERIOR DE PROTEÇÃO */
+        /* GRADE DE PREÇOS */
         .pricing-grid { 
             display: flex; gap: 30px; justify-content: center; align-items: stretch; 
             margin-top: 20px; 
@@ -279,14 +277,14 @@
                 <li><a href="#pricing">Planos</a></li>
                 <li><a href="#who">Quem Somos</a></li>
             </ul>
-            </div>
+        </div>
     </header>
 
     <div class="hero-section">
         <main class="container hero">
             <div class="hero-text">
                 <h1>Destrave o Potencial de Lucro do seu <span style="color: var(--accent-green);">Negócio</span>.</h1>
-                <p>Abandone as planilhas e o descontrole financeiro. O MetricsOne é a ferramenta definitiva para organizar custos, despesas e fazer seu negócio Crescer.</p>
+                <p>Tenha controle, organização e visão completa da sua operação. Transforme dados dispersos em uma visão clara dos resultados e tome decisões que aumentam a lucratividade do seu negócio.</p>
                 <div class="hero-buttons">
                     <a href="https://app.metricsone.com.br" class="btn-neon-pink">TESTAR 10 DIAS GRÁTIS</a>
                     <a href="https://wa.me/5511913207227?text=Olá,%20estou%20no%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20MetricsOne!" target="_blank" class="btn-neon-green">
@@ -320,7 +318,7 @@
     <section id="about" class="container">
         <div class="section-title">
             <h2>Gestão Descomplicada = Decisões Melhores</h2>
-            <p>Construído para substituir a desorganização por dados estratégicos.</p>
+            <p>Clareza para decidir. Organização para crescer.</p>
         </div>
         <div class="management-grid">
             <div class="mgt-box"><div class="icon-circle"><i class="fas fa-shield-alt"></i></div><h3>Segurança de Dados</h3><p>Suas informações financeiras protegidas na nuvem com criptografia de ponta.</p></div>
@@ -350,7 +348,7 @@
                 <p style="color:var(--text-muted); margin-bottom:15px; font-size:0.9rem;">Organização e fluxo diário</p>
                 <div class="price-value">R$ 37,90<span>/mês</span></div>
                 <ul class="price-list">
-                    <li><i class="fas fa-check"></i> Lançamento de Vendas</li>
+                    <li><i class="fas fa-check"></i> Registro de Vendas</li>
                     <li><i class="fas fa-check"></i> Cadastro de Produtos e Estoque</li>
                     <li><i class="fas fa-check"></i> Cadastro de Embalagens e Fornecedores</li>
                     <li><i class="fas fa-check"></i> Despesas Operacionais</li>
@@ -370,10 +368,10 @@
                 <ul class="price-list">
                     <li><i class="fas fa-check"></i> <b>Tudo do Plano Starter</b></li>
                     <li><i class="fas fa-check"></i> <b>D.R.E. Gerencial Automática</b></li>
-                    <li><i class="fas fa-check"></i> <b>Ficha Técnica e Engenharia</b></li>
+                    <li><i class="fas fa-check"></i> <b>Ficha Técnica de Produtos</b></li>
                     <li><i class="fas fa-check"></i> <b>Pagamento de Motoboys + PDFs</b></li>
                     <li><i class="fas fa-check"></i> Inventário e Auditoria</li>
-                    <li><i class="fas fa-check"></i> Simulador de Precificação Perfeita</li>
+                    <li><i class="fas fa-check"></i> Simulador de Precificação</li>
                 </ul>
                 <a href="https://app.metricsone.com.br" class="btn-plan"><i class="fas fa-rocket"></i> TESTAR 10 DIAS GRÁTIS</a>
             </div>
@@ -384,8 +382,9 @@
         <div class="about-content">
             <div class="about-text">
                 <h2>Quem Somos</h2>
-                <p>O MetricsOne nasceu da necessidade real de transformar a gestão de pequenos e médios estabelecimentos do setor de Food Service. Sabemos que a rotina de um negócio é intensa e, muitas vezes, o controle financeiro acaba ficando em segundo plano.</p>
-                <p>Muitos restaurantes, hamburguerias, pizzarias e deliveries vendem todos os dias, mas fecham o mês sem saber exatamente quanto lucraram ou para onde o dinheiro foi. Se você vive essa realidade, chegou a hora de mudar.</p>
+                <p>Somos uma empresa especializada em transformar dados financeiros em informações estratégicas para pequenos e médios negócios.</p>
+                <p>Ajudamos restaurantes, hamburguerias, pizzarias, deliveries e diversos estabelecimentos a organizarem seus números, acompanharem indicadores e entenderem com clareza seus resultados.</p>
+                <p>Nossa missão é eliminar a complexidade da gestão financeira, permitindo que empresários tenham mais controle, produtividade e segurança para tomar decisões que impulsionam o crescimento do negócio.</p>
             </div>
         </div>
     </section>
