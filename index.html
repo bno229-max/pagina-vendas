@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MetricsOne | Destrave o Lucro do seu Negócio</title>
     
-    <meta name="google-site-verification" content="O_D-GGhlnJ7enAzK5UUse12vE6xolxBSQXgux9C8jZc" />
-
     <link rel="icon" href="icone-512 (5).png" type="image/png">
     <link rel="apple-touch-icon" href="icone-512 (5).png">
 
@@ -58,14 +56,14 @@
         }
         .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
         
-        /* LOGO GIGANTE EM POSIÇÃO COMPACTA */
+        /* LOGO AMPLIADO COM AJUSTE DE MARGEM PARA NÃO CORTAR NO TOPO */
         .logo img {
-            height: 220px; 
+            height: 260px; 
             width: auto;
             object-fit: contain;
             display: block;
             filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
-            margin: -60px 0;
+            margin: -20px 0 -80px 0;
         }
 
         .nav-links { display: flex; gap: 25px; list-style: none; align-items: center;}
@@ -288,7 +286,7 @@
         @media (max-width: 768px) {
             header { position: relative; padding: 20px 0 0 0; }
             .nav-wrapper { flex-direction: column; align-items: center; gap: 15px; }
-            .logo img { height: 130px; margin: 0; } 
+            .logo img { height: 160px; margin: -10px 0 -40px 0; } 
             
             .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; width: 100%; margin-top: 5px;}
             .nav-links a { font-size: 0.8rem; }
@@ -382,7 +380,7 @@
         <div class="container">
             <div class="section-title"><h2>Soluções Desenvolvidas para Resultados</h2><p>Módulos integrados de ponta a ponta.</p></div>
             <div class="solutions-grid">
-                <div class="sol-card"><i class="fas fa-dollar-sign"></i><h3>Vendas Multicanais</h3><p>Registre suas vendas do iFood, 99foods, keeta, WhatsApp e Balcão de forma centralizada.</p></div>
+                <div class="sol-card"><i class="fas fa-dollar-sign"></i><h3>Vendas Multicanais</h3><p>Registre suas vendas do iFood, 99foods, keeta, WhatsApp e Maquininha de forma centralizada.</p></div>
                 <div class="sol-card"><i class="fas fa-file-invoice-dollar"></i><h3>Despesas Op.</h3><p>Lance despesas pessoais e estruturais, boletos de forn. despesas fixas e variaveis.</p></div>
                 <div class="sol-card"><i class="fas fa-receipt"></i><h3>Ficha Técnica</h3><p>Conheça o custo real de cada prato eliminando o "achismo".</p></div>
                 <div class="sol-card"><i class="fas fa-chart-pie"></i><h3>Relatórios de BI</h3><p>Gráficos limpos criados para você ler, analisar tendências e tomar decisões em segundos.</p></div>
@@ -414,6 +412,7 @@
                     <li><i class="fas fa-check"></i> Cadastro de Embalagens e Fornecedores</li>
                     <li><i class="fas fa-check"></i> Despesas Operacionais</li>
                     <li class="disabled"><i class="fas fa-times"></i> D.R.E. Gerencial</li>
+                    <li class="disabled"><i class="fas fa-times"></i> Metas e Projeções</li>
                     <li class="disabled"><i class="fas fa-times"></i> Ficha Técnica Avançada</li>
                     <li class="disabled"><i class="fas fa-times"></i> Pagamento de Motoboy</li>
                     <li class="disabled"><i class="fas fa-times"></i> Inventário e Auditoria</li>
@@ -430,10 +429,11 @@
                 <ul class="price-list">
                     <li><i class="fas fa-check"></i> <b>Tudo do Plano Starter</b></li>
                     <li><i class="fas fa-check"></i> <b>D.R.E. Gerencial Automática</b></li>
+                    <li><i class="fas fa-check"></i> <b>Metas e Projeções</b></li>
                     <li><i class="fas fa-check"></i> <b>Ficha Técnica de Produtos</b></li>
-                    <li><i class="fas fa-check"></i> <b>Pagamento de Motoboys + PDFs</b></li>
-                    <li><i class="fas fa-check"></i> Inventário e Auditoria</li>
-                    <li><i class="fas fa-check"></i> Simulador de Precificação</li>
+                    <li><i class="fas fa-check"></i> <b>Pagamento de Motoboys + Comprovante</b></li>
+                    <li><i class="fas fa-check"></i> <b>Inventário e Relatório</b></li>
+                    <li><i class="fas fa-check"></i> <b>Simulador de Precificação</b></li>
                     <li style="background: rgba(254, 84, 122, 0.1); padding: 8px; border-radius: 8px; border: 1px solid rgba(254, 84, 122, 0.3);"><i class="fas fa-robot" style="color: var(--cta-color);"></i> <b>CFO Virtual (I.A.)</b> <span style="font-size:0.6rem; background: var(--cta-color); color: #fff; padding: 2px 5px; border-radius:4px; margin-left:4px;">EM BREVE</span></li>
                 </ul>
                 <a href="https://app.metricsone.com.br" class="btn-plan"><i class="fas fa-rocket"></i> TESTAR 10 DIAS GRÁTIS</a>
@@ -445,9 +445,9 @@
         <div class="about-content">
             <div class="about-text">
                 <h2>Quem Somos</h2>
-                <p>Somos uma empresa especializada em transformar dados financeiros em informações estratégicas para pequenos e médios negócios.</p>
+                <p>Somos uma empresa especializada em transformar dados financeiros em informações estratégicas para micro, pequenos e médios negócios.</p>
                 <p>Ajudamos restaurantes, hamburguerias, pizzarias, deliveries e diversos estabelecimentos a organizarem seus números, acompanharem indicadores e entenderem com clareza seus resultados.</p>
-                <p>Nossa missão é eliminar a complexidade da gestão financeira, permitindo que empresários tenham mais controle, produtividade e segurança para tomar decisões que impulsionam o crescimento do negócio.</p>
+                <p>Nossa missão é eliminar a complexidade da gestão financeira, permitindo que donos(as) tenham mais controle, produtividade e segurança para tomar decisões que impulsionam o crescimento do negócio.</p>
             </div>
         </div>
     </section>
